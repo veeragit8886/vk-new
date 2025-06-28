@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+.marquee-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* or any specific width */
+  height: auto;
+}
+
+.marquee-image {
+  position: absolute;
+  top: -40px; /* adjust as needed */
+  left: 50%;
+  z-index: -10;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.slick-next:before{
+  display: none;
+}
+
+.slick-prev:before {
+  display: none;
+}
+
+.slick-dots {
+  background-color: #7575c4; /* dark indigo tone */
+  padding: 1rem 0; /* vertical padding for spacing */
+  margin-top: 3rem; /* equivalent to 48px */
+  border-radius: 0.5rem; /* optional: soft rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* space between dots */
+}
+
+.slick-dots li button:before {
+  color: #fff; /* white dots */
+  font-size: 0.75rem;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #3b82f6; /* active dot: Tailwind's blue-500 */
+  transform: scale(1.2);
+}
+
+/* .custom-cursor {
+  cursor: url('/images/blog1.jpg') 16 16, auto;
+} */

@@ -1,0 +1,12 @@
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Show from md screens (min-width: 768px) */
+@media (min-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    display: block !important;
+  }
+}
