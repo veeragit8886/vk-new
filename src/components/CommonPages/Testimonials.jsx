@@ -45,7 +45,7 @@ const Testimonials = () => {
   };
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
     speed: 500,
@@ -94,24 +94,17 @@ const Testimonials = () => {
           <Slider {...settings}>
             {imageData[activeTab].map((x, i) => (
               <div key={i} className="px-2 focus:outline-none">
-                <div className="p-2 bg-white/5 rounded-lg border border-white/10 hover:border-blue-400/30 transition-all h-60"> {/* Reduced height */}
-                  <div className="h-full overflow-hidden rounded-lg">
-                    <img
-                      src={x.img}
-                      alt=""
-                      className={`w-full h-full hover:scale-105 transition-transform duration-300 ${
-                        activeTab === 'Logos'
-                          ? 'object-contain max-h-40 p-4'
-                          : 'object-cover h-full'
-                      }`}
-                    />
-
-
-                  </div>
+                <div className="p-2 bg-white rounded-lg border border-white/10 hover:border-blue-400/30 transition-all h-60 flex items-center justify-center">
+                  <img
+                    src={x.img}
+                    alt="img"
+                    className="w-full h-full object-contain rounded transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </div>
             ))}
           </Slider>
+
         </div>
       </div>
     </section>
